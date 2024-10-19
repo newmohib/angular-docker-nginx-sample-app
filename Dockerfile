@@ -23,6 +23,8 @@ FROM nginx:alpine
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Copy built Angular app from the build stage
+COPY --from=build /app/dist/angular-sample-app/*.* /usr/share/nginx/html
+
 COPY --from=build /app/dist/angular-sample-app/browser/* /usr/share/nginx/html
 
 EXPOSE 80
