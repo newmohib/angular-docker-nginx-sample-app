@@ -21,4 +21,8 @@
  - or
  - chmod +x script.sh && ./script.sh
 
-
+#### Remove all container and image
+- Remove all image
+- docker image rm -f $(docker image ls -q)
+- Remove all container
+- docker container rm -f $( docker container ls -aq )
